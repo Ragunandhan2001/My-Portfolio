@@ -1,8 +1,204 @@
-<html>
-    <head>
-        <title>Home Page</title>
-    </head>
-    <body>
-        <h1>Welcome to My Portfolio</h1>    
-    </body>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ragunandhan — Portfolio</title>
+  <meta name="description" content="Personal portfolio of Ragunandhan — developer, designer, problem solver." />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* RESET */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      line-height:1.45;color:#0f172a;background:linear-gradient(180deg,#f8fafc 0%, #ffffff 100%);
+      -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;padding:24px;
+    }
+
+    /* LAYOUT */
+    .container{max-width:1100px;margin:0 auto}
+    header{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:48px;height:48px;border-radius:10px;background:#0ea5a3;color:white;display:flex;align-items:center;justify-content:center;font-weight:700}
+    nav a{margin-left:18px;text-decoration:none;color:#0f172a;font-weight:600}
+
+    /* HERO */
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:36px;align-items:center;padding:36px 0}
+    .hero h1{font-size:32px;line-height:1.05;margin-bottom:12px}
+    .hero p.lead{color:#475569;margin-bottom:18px}
+    .cta{display:flex;gap:12px}
+    .btn{padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:700;display:inline-block}
+    .btn-primary{background:#0ea5a3;color:white}
+    .btn-ghost{border:1px solid #e2e8f0;color:#0f172a;background:transparent}
+
+    .profile-card{background:white;border-radius:14px;padding:18px;box-shadow:0 6px 18px rgba(15,23,42,0.06);text-align:center}
+    .avatar{width:120px;height:120px;border-radius:999px;margin:0 auto 12px;object-fit:cover}
+    .role{color:#64748b;font-weight:600;margin-bottom:6px}
+
+    /* PROJECTS */
+    .section{padding:48px 0}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+    .card{background:white;padding:16px;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.04);transition:transform .18s ease,box-shadow .18s ease}
+    .card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(2,6,23,0.08)}
+    .card h3{margin-bottom:8px;font-size:16px}
+    .card p{font-size:14px;color:#475569}
+    .tags{margin-top:10px;display:flex;flex-wrap:wrap;gap:6px}
+    .tag{font-size:12px;padding:6px 8px;border-radius:999px;background:#eef2ff;color:#3730a3}
+
+    /* SKILLS */
+    .skills{display:flex;gap:10px;flex-wrap:wrap}
+    .skill{background:#f1f5f9;padding:8px 10px;border-radius:8px;font-weight:600}
+
+    /* CONTACT */
+    .contact-form{display:grid;gap:10px}
+    input,textarea{padding:10px;border-radius:8px;border:1px solid #e6eef5;font-size:14px}
+    textarea{min-height:120px;resize:vertical}
+
+    footer{padding:24px 0;color:#64748b;text-align:center}
+
+    /* RESPONSIVE */
+    @media (max-width:860px){
+      .hero{grid-template-columns:1fr}
+      nav a{display:none}
+    }
+  </style>
+
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">RN</div>
+        <div>
+          <div style="font-weight:800">Ragunandhan P</div>
+          <div style="font-size:12px;color:#64748b">Python Developer • Full Stack Engineer</div>
+        </div>
+      </div>
+
+      <nav aria-label="Primary navigation">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <h1>Hi, I'm <span style="color:#0ea5a3">Ragunandhan P</span> — I build clean, accessible web experiences.</h1>
+          <p class="lead">I’m a developer focused on crafting delightful user interfaces and reliable Python architecture. I work with Django, FastAPI and Flask.</p>
+
+          <div class="cta">
+            <a class="btn btn-primary" href="#projects">View work</a>
+            <a class="btn btn-ghost" href="#contact">Contact me</a>
+          </div>
+
+          <div style="margin-top:22px">
+            <strong>Currently:</strong> Building a personal finance app with Django and React.
+          </div>
+        </div>
+
+        <aside class="profile-card">
+          <img class="avatar" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=400&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Your avatar">
+          <div class="role">Python Developer</div>
+          <div style="font-weight:700">Ragunandhan P</div>
+          <p style="color:#64748b;margin-top:8px">I solve problems with elegant code, and I love collaborating on meaningful products.</p>
+
+          <div style="display:flex;gap:8px;justify-content:center;margin-top:12px">
+            <a href="#contact" class="btn btn-primary" style="padding:8px 12px;font-size:14px">Hire me</a>
+            <a href="#projects" class="btn btn-ghost" style="padding:8px 12px;font-size:14px">See projects</a>
+          </div>
+        </aside>
+      </section>
+
+      <section id="about" class="section">
+        <h2 style="font-size:20px;margin-bottom:12px">About</h2>
+        <p style="color:#475569;max-width:720px">I’m a passionate developer who enjoys turning ideas into polished products. I care about performance, accessibility and readable code. When I’m not coding I read history and play cricket.</p>
+      </section>
+
+      <section id="projects" class="section">
+        <h2 style="font-size:20px;margin-bottom:16px">Selected Projects</h2>
+        <div class="grid">
+
+          <article class="card">
+            <h3>Project One — Dashboard UI</h3>
+            <p>A responsive dashboard template with charts, filters and an accessible design system.</p>
+            <div class="tags"><span class="tag">Django</span><span class="tag">FastAPI</span><span class="tag">Flask</span></div>
+          </article>
+
+          <article class="card">
+            <h3>Project Two — Landing Page</h3>
+            <p>Marketing landing page with A/B-tested hero and fast load times.</p>
+            <div class="tags"><span class="tag">HTML</span><span class="tag">Performance</span></div>
+          </article>
+
+          <article class="card">
+            <h3>Project Three — E‑commerce Flow</h3>
+            <p>Checkout and product components with accessible forms and keyboard support.</p>
+            <div class="tags"><span class="tag">Accessibility</span><span class="tag">UX</span></div>
+          </article>
+
+          <article class="card">
+            <h3>Project Four — Open Source</h3>
+            <p>Small utility libraries and components published on GitHub for reuse.</p>
+            <div class="tags"><span class="tag">Open Source</span><span class="tag">NPM</span></div>
+          </article>
+
+        </div>
+      </section>
+
+      <section id="skills" class="section">
+        <h2 style="font-size:20px;margin-bottom:12px">Skills</h2>
+        <div class="skills">
+          <div class="skill">HTML &amp; Semantic Markup</div>
+          <div class="skill">CSS Grid &amp; Flexbox</div>
+          <div class="skill">JavaScript (ES6+)</div>
+          <div class="skill">React &amp; TypeScript</div>
+          <div class="skill">Performance &amp; Accessibility</div>
+          <div class="skill">Git &amp; CI/CD</div>
+        </div>
+      </section>
+
+      <section id="contact" class="section">
+        <h2 style="font-size:20px;margin-bottom:12px">Contact</h2>
+        <p style="color:#475569;">Want to collaborate or hire me? Send a message — or email: <a href="mailto:you@example.com">you@example.com</a></p>
+
+        <form class="contact-form" onsubmit="submitForm(event)">
+          <input type="text" name="name" placeholder="Your name" required>
+          <input type="email" name="email" placeholder="Your email" required>
+          <textarea name="message" placeholder="Message" required></textarea>
+          <div style="display:flex;gap:10px">
+            <button class="btn btn-primary" type="submit">Send message</button>
+            <a class="btn btn-ghost" href="/resume.pdf" target="_blank">Download resume</a>
+          </div>
+        </form>
+      </section>
+
+    </main>
+
+    <footer>
+      <div>© <span id="year"></span> Ragunandhan — Built with ❤️</div>
+    </footer>
+  </div>
+
+  <script>
+    // Small client-side niceties
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function submitForm(e){
+      e.preventDefault();
+      const f = e.target;
+      const data = {name:f.name.value,email:f.email.value,message:f.message.value};
+      // For quick demo: open mailto with prefilled content (replace with real endpoint in production)
+      const subject = encodeURIComponent('Portfolio inquiry from ' + data.name);
+      const body = encodeURIComponent(data.message + '\n\nContact: ' + data.email);
+      window.location.href = `mailto:you@example.com?subject=${subject}&body=${body}`;
+    }
+  </script>
+</body>
 </html>
