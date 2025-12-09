@@ -1,4 +1,27 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
+from .models import *
 
-def home_view(request):
-    return render(request, 'home.html')
+def contact_page(request):
+    projects = ProjectData.objects.all()
+    skills = Skill.objects.all()
+    context = {
+        "projects": projects,
+        "skills": skills
+    }
+    if request.method == "POST":
+        name = request.POST.get("name")
+        email = request.POST.get("email")
+        message = request.POST.get("message")
+
+        Contact.objects.create(
+            name=name,
+            email=email,
+            message=message 
+        )
+
+        return render(request, "home.html", {"success": True})
+
+    return render(request, "home.html",context)
+
+
+

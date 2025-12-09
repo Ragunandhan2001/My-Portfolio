@@ -1,3 +1,18 @@
 from django.db import models
 
-# Create your models here.
+class ProjectData(models.Model):
+    title = models.CharField(max_length=200)
+    description = models.TextField()
+    tech_used = models.CharField(max_length=200)
+    github = models.URLField()
+
+class Skill(models.Model):
+    name = models.CharField(max_length=100)
+    level = models.CharField(max_length=50)  
+    
+class Contact(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    message = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
