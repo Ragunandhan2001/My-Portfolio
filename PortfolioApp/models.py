@@ -16,3 +16,7 @@ class Contact(models.Model):
     message = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
 
+class SocialMedia(models.Model):
+    github = models.URLField()
+    linkedin = models.URLField()
+    instagram = models.URLField()
