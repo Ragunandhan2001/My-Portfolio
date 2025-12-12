@@ -1,4 +1,5 @@
 from django.shortcuts import render,redirect
+from .tasks import send_contact_email
 from .models import *
 
 def contact_page(request):
@@ -20,13 +21,11 @@ def contact_page(request):
             email=email,
             message=message 
         )
+        send_contact_email.delay(name, email, message)
+        
+        return render(request, "home.html", {"success": True,"projects": projects,"skills": skills,"social": social})
 
-        return render(request, "home.html", {"success": True})
-
-    return render(request, "home.html",context)
-
-
-    
+    return render(request, "home.html", context)
     
 
 
